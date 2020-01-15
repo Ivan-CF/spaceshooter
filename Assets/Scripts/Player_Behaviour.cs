@@ -7,6 +7,7 @@ public class Player_Behaviour : MonoBehaviour
     public float speed;
     private Vector2 axis;
     public Vector2 limits;
+    public float shootTime = 0;
 
     void Update () {
         transform.Translate (axis * speed * Time.deltaTime);
@@ -36,8 +37,14 @@ public class Player_Behaviour : MonoBehaviour
 
     public void Shoot()
     {
-        weapon.Shoot();
+        if (shootTime > weapon.GetCadencia())
+        {
+            shootTime = 0f;
+            weapon.Shoot();
+        }
     }
+ 
+  
 
     
 }
