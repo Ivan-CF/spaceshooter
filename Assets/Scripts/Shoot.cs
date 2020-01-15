@@ -16,5 +16,6 @@ public class Shoot : MonoBehaviour
     {
         if (collision.gameObject.tag == "Finish")
             Destroy(this);
+        //nada
     }
 }
