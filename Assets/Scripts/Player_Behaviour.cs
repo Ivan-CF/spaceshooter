@@ -10,6 +10,8 @@ public class Player_Behaviour : MonoBehaviour
     public float shootTime = 0;
 
     void Update () {
+        shootTime += Time.deltaTime;
+
         transform.Translate (axis * speed * Time.deltaTime);
  
         if (transform.position.x > limits.x) {

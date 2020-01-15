@@ -21,7 +21,7 @@ public class Ship_Input : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             Debug.Log("Fire Nave");
-            //player.shoot();
+            player.Shoot();
         }
     }
 }
