@@ -32,9 +32,11 @@ public class Player_Behaviour : MonoBehaviour
         axis= new Vector2(x,y);
 	}
 
+    public Weapon weapon;
+
     public void Shoot()
     {
-        Debug.Log("Dispara");
+        weapon.Shoot();
     }
 
     
