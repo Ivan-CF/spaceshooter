@@ -17,5 +17,11 @@ public class Ship_Input : MonoBehaviour
 
         //Debug.Log("x:"+axis.x+" y:"+axis.y);
         player.SetAxis(axis);
+
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("Fire Nave");
+            //player.shoot();
+        }
     }
 }
