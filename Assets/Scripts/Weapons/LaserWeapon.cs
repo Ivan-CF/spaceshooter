@@ -7,6 +7,7 @@ public class LaserWeapon : Weapon
 
     public GameObject laserBullet;
     public float cadencia;
+   
 
     public override float GetCadencia()
     {
@@ -15,6 +16,7 @@ public class LaserWeapon : Weapon
 
     public override void Shoot()
     {
+
         Instantiate(laserBullet, this.transform.position, Quaternion.identity, null);
     }
 }
