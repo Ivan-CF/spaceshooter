@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328133bd01af98e4c8fa0116d377e0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserBullet: {fileID: 1730974490367905587, guid: bdd056a6a7cb77a41b7f68bd016481e5,
+  laserBullet: {fileID: 6405267706596425829, guid: 1c27189fb44a38b4fa5e0501876a2c89,
     type: 3}
   cadencia: 0.2
 --- !u!61 &1576061523
