@@ -8,6 +8,7 @@ public class Player_Behaviour : MonoBehaviour
     private Vector2 axis;
     public Vector2 limits;
     public float shootTime = 0;
+    public Propeller prop;
 
     void Update () {
         shootTime += Time.deltaTime;
@@ -27,6 +28,16 @@ public class Player_Behaviour : MonoBehaviour
         else if (transform.position.y < -limits.y) {
             transform.position = new Vector3 (transform.position.x, -limits.y, transform.position.z);
         }
+
+        if (axis.x>0){
+          prop.BlueFire();
+		}
+        //else if (axis.x<0){
+         //prop.RedFire();  
+		
+        else{
+         prop.Stop();  
+		}
     }
     public void SetAxis (Vector2 currentAxis){
         axis = currentAxis;
@@ -45,6 +56,7 @@ public class Player_Behaviour : MonoBehaviour
             weapon.Shoot();
         }
     }
+
  
   
 

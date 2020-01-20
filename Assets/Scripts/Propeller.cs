@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Propeller : MonoBehaviour {
+
+    public TrailRenderer blue01;
+    public TrailRenderer blue02;
+
+
+    // Use this for initialization
+    void Awake () {
+        Stop ();
+    }
+    
+    public void BlueFire(){
+        blue01.emitting = true;
+        blue02.emitting = true;
+    }
+
+
+    public void Stop(){
+        blue01.emitting = false;
+        blue02.emitting = false;
+    }
+}
