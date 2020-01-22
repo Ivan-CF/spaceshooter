@@ -7,6 +7,7 @@ public class LaserWeapon : Weapon
 
     public GameObject laserBullet;
     public float cadencia;
+    public AudioSource audioSource;
    
 
     public override float GetCadencia()
@@ -18,6 +19,9 @@ public class LaserWeapon : Weapon
     {
 
         Instantiate(laserBullet, this.transform.position, Quaternion.identity, null);
+
+        //Play audio
+        audioSource.Play();
     }
 }
 

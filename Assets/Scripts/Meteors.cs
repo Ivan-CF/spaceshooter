@@ -7,6 +7,8 @@ public class Meteors : MonoBehaviour
     public GameObject[] graphics;
     int seleccionado;
     Vector2 speed;
+    public AudioSource audioSource;
+   
         
     // Start is called before the first frame update
     void Start()
@@ -31,4 +33,37 @@ public class Meteors : MonoBehaviour
         transform.Translate(speed * Time.deltaTime);
         graphics[seleccionado].transform.Rotate(0, 0, 100 * Time.deltaTime);
     }
+
+        
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "Finish")
+            {
+                Destroy(this.gameObject);
+            }
+            else if (other.tag == "Bullet")
+            {
+                StartCoroutine(DestroyMeteors());
+            }
+        }
+
+        IEnumerator DestroyMeteors()
+        {
+        //Desactivo el grafico
+        graphics[seleccionado].SetActive(false);
+
+            //Elimino el BoxCollider2D
+            Destroy(GetComponent<BoxCollider2D>());
+
+            //Lanzo sonido de explosion
+            audioSource.Play();
+
+            //Me espero 1 segundo
+            yield return new WaitForSeconds(1.0f);
+
+            //Me destruyo a mi mismo
+            Destroy(this.gameObject);
+        }
+
+    
 }

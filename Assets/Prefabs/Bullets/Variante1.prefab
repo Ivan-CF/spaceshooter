@@ -541,8 +541,8 @@ GameObject:
   - component: {fileID: 3584275086750366165}
   - component: {fileID: 6219556443553427243}
   m_Layer: 0
-  m_Name: LaserBullet Variant 1
-  m_TagString: Untagged
+  m_Name: Variante1
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
