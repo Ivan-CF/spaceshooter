@@ -49,8 +49,8 @@ public class Meteors : MonoBehaviour
 
         IEnumerator DestroyMeteors()
         {
-        //Desactivo el grafico
-        graphics[seleccionado].SetActive(false);
+            //Desactivo el grafico
+            graphics[seleccionado].SetActive(false);
 
             //Elimino el BoxCollider2D
             Destroy(GetComponent<BoxCollider2D>());
