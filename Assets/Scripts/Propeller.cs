@@ -7,6 +7,8 @@ public class Propeller : MonoBehaviour {
     public TrailRenderer blue01;
     public TrailRenderer blue02;
 
+    public TrailRenderer red01;
+    public TrailRenderer red02;
 
     // Use this for initialization
     void Awake () {
@@ -18,9 +20,17 @@ public class Propeller : MonoBehaviour {
         blue02.emitting = true;
     }
 
+    public void RedFire()
+    {
+        red01.emitting = true;
+        red02.emitting = true;
+    }
 
-    public void Stop(){
+    public void Stop()
+    {
         blue01.emitting = false;
         blue02.emitting = false;
+        red01.emitting = false;
+        red02.emitting = false;
     }
 }

@@ -29,15 +29,19 @@ public class Player_Behaviour : MonoBehaviour
             transform.position = new Vector3 (transform.position.x, -limits.y, transform.position.z);
         }
 
-        if (axis.x>0){
-          prop.BlueFire();
-		}
-        //else if (axis.x<0){
-         //prop.RedFire();  
-		
-        else{
-         prop.Stop();  
-		}
+        if (axis.x > 0)
+        {
+            prop.BlueFire();
+        }
+        else if (axis.x < 0)
+        {
+            prop.RedFire();
+        }
+
+        else
+        {
+            prop.Stop();
+        }
     }
     public void SetAxis (Vector2 currentAxis){
         axis = currentAxis;
