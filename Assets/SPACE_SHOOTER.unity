@@ -7859,7 +7859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  limits: {x: 10, y: 5}
+  limits: {x: 8.8, y: 5.2}
   shootTime: 0
   prop: {fileID: 263977198}
   weapon: {fileID: 1576061521}
