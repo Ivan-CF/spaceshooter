@@ -8,7 +8,7 @@ public class Meteors : MonoBehaviour
     int seleccionado;
     Vector2 speed;
     public AudioSource audioSource;
-   
+    public ParticleSystem ps;
         
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,9 @@ public class Meteors : MonoBehaviour
 
             //Elimino el BoxCollider2D
             Destroy(GetComponent<BoxCollider2D>());
+
+
+            ps.Play();
 
             //Lanzo sonido de explosion
             audioSource.Play();
