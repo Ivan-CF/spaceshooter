@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 4715204138964812120, guid: 46c4449c6a4439f4b82550aa45592192,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4900007
+      value: 11.28
       objectReference: {fileID: 0}
     - target: {fileID: 4715204138964812120, guid: 46c4449c6a4439f4b82550aa45592192,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 4715204138964812120, guid: 46c4449c6a4439f4b82550aa45592192,
         type: 3}
@@ -65,7 +65,22 @@ PrefabInstance:
     - target: {fileID: 5557931257104545463, guid: 46c4449c6a4439f4b82550aa45592192,
         type: 3}
       propertyPath: m_Name
-      value: Particula
+      value: Particula Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452117415203728786, guid: 46c4449c6a4439f4b82550aa45592192,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452117415203728786, guid: 46c4449c6a4439f4b82550aa45592192,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452117415203728786, guid: 46c4449c6a4439f4b82550aa45592192,
+        type: 3}
+      propertyPath: UVModule.tilesY
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c4449c6a4439f4b82550aa45592192, type: 3}

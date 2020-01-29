@@ -9,6 +9,9 @@ public class Player_Behaviour : MonoBehaviour
     public Vector2 limits;
     public float shootTime = 0;
     public Propeller prop;
+    public AudioSource audioSource;
+    public ParticleSystem ps;
+    public GameObject graphics;
 
     void Update () {
         shootTime += Time.deltaTime;
@@ -60,9 +63,38 @@ public class Player_Behaviour : MonoBehaviour
             weapon.Shoot();
         }
     }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Meteor")
+        {
+            StartCoroutine(DestroyShip());
+        }
+    }
+    IEnumerator DestroyShip()
+    {
+        {
+            //Desactivo el grafico
+            graphics.SetActive(false);
 
- 
-  
+            //Elimino el BoxCollider2D
+            Destroy(GetComponent<BoxCollider2D>());
 
-    
+
+            ps.Play();
+
+            //Lanzo sonido de explosion
+            audioSource.Play();
+
+            //Me espero 1 segundo
+            yield return new WaitForSeconds(1.0f);
+
+            //Me destruyo a mi mismo
+            Destroy(this.gameObject);
+        }
+    }
+
+
+
+
+
 }
