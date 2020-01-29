@@ -884,6 +884,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1566355038, guid: 827c1352706956a4491b7c352ee9942a, type: 3}
+      propertyPath: meteorToInstanciate
+      value: 
+      objectReference: {fileID: 1598613338}
     - target: {fileID: 4007544604381096201, guid: 827c1352706956a4491b7c352ee9942a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11619,6 +11623,12 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &1598613338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5478733617134382111, guid: 92b543e76c56cdd47ace00aa82e54808,
+    type: 3}
+  m_PrefabInstance: {fileID: 4187186699578997031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1627391671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11819,6 +11829,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1671621793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1353123260964410049, guid: d59b0c2844dbb10459b4d2024b64e0d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889128823436924375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1878251655
 GameObject:
   m_ObjectHideFlags: 0
@@ -17178,6 +17194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallMeteor
       objectReference: {fileID: 0}
+    - target: {fileID: 1353123260964410049, guid: d59b0c2844dbb10459b4d2024b64e0d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7700323704890220545, guid: d59b0c2844dbb10459b4d2024b64e0d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17257,6 +17278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 256632975295568264, guid: 92b543e76c56cdd47ace00aa82e54808,
+        type: 3}
+      propertyPath: meteorToInstanciate
+      value: 
+      objectReference: {fileID: 1671621793}
     - target: {fileID: 3752086458724474591, guid: 92b543e76c56cdd47ace00aa82e54808,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17331,6 +17357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MediumMeteor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478733617134382111, guid: 92b543e76c56cdd47ace00aa82e54808,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92b543e76c56cdd47ace00aa82e54808, type: 3}
