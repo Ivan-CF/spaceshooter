@@ -76,7 +76,7 @@ public class Player_Behaviour : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Meteor")
+        if(other.tag == "Meteor" || other.tag == "EnemyBullet")
         {
             StartCoroutine(DestroyShip());
         }
