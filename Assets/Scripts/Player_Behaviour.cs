@@ -93,8 +93,7 @@ public class Player_Behaviour : MonoBehaviour
             //Desactivo el grafico
             graphics.SetActive(false);
 
-            //Elimino el BoxCollider2D
-            Destroy(GetComponent<BoxCollider2D>());
+            collider.enabled = false;
 
 
             ps.Play();
@@ -105,19 +104,6 @@ public class Player_Behaviour : MonoBehaviour
             //Me espero 1 segundo
             yield return new WaitForSeconds(1.0f);
 
-            //Miro si tengo mas vidas
-            if (lives > 0)
-            {
-                //Vuelvo a activar el jugador
-                iamDead = false;
-                graphics.SetActive(true);
-                collider.enabled = true;
-                //Activo el propeller
-                prop.gameObject.SetActive(true);
-            }
-
-            //Me destruyo a mi mismo
-            Destroy(this.gameObject);
 
             if (lives > 0){
                 StartCoroutine(inMortal());
@@ -130,10 +116,15 @@ public class Player_Behaviour : MonoBehaviour
             iamDead = false;
             graphics.SetActive(true);
             //Activo el propeller
-            prop.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
             prop.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
+
+            for (int i = 0; i < 15; i++)
+            {
+                yield return new WaitForSeconds(0.1f);
+                graphics.SetActive(false);
+                yield return new WaitForSeconds(0.1f);
+                graphics.SetActive(true);
+            }
             //Activo el collider
             collider.enabled = true;
         }
