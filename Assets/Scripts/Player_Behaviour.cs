@@ -13,7 +13,18 @@ public class Player_Behaviour : MonoBehaviour
     public ParticleSystem ps;
     public GameObject graphics;
 
+    [SerializeField] Collider2D collider;
+
+    public int lives = 3;
+    private bool iamDead = false;
+
     void Update () {
+
+        if (iamDead)
+        {
+            return;
+        }
+
         shootTime += Time.deltaTime;
 
         transform.Translate (axis * speed * Time.deltaTime);
@@ -73,6 +84,12 @@ public class Player_Behaviour : MonoBehaviour
     IEnumerator DestroyShip()
     {
         {
+            //Indico que estoy muerto
+            iamDead = true;
+
+            //Me quito una vida
+            lives--;
+
             //Desactivo el grafico
             graphics.SetActive(false);
 
@@ -88,8 +105,37 @@ public class Player_Behaviour : MonoBehaviour
             //Me espero 1 segundo
             yield return new WaitForSeconds(1.0f);
 
+            //Miro si tengo mas vidas
+            if (lives > 0)
+            {
+                //Vuelvo a activar el jugador
+                iamDead = false;
+                graphics.SetActive(true);
+                collider.enabled = true;
+                //Activo el propeller
+                prop.gameObject.SetActive(true);
+            }
+
             //Me destruyo a mi mismo
             Destroy(this.gameObject);
+
+            if (lives > 0){
+                StartCoroutine(inMortal());
+            }
+        }
+
+        IEnumerator inMortal()
+        {
+            //Vuelvo as activar el jugador
+            iamDead = false;
+            graphics.SetActive(true);
+            //Activo el propeller
+            prop.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            prop.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            //Activo el collider
+            collider.enabled = true;
         }
     }
 
