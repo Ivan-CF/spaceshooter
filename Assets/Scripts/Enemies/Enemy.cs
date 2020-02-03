@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * Time.deltaTime);
+
     }
 
     IEnumerator EnemyBehaviour()
@@ -24,22 +25,22 @@ public class Enemy : MonoBehaviour
         {
             //Avanza horizontalmente
             
-            speed.x = -1f;
-            speed.y = 1f;
-            yield return new WaitForSeconds(1.0f);
+            speed.x = -1.5f;
+            speed.y = -1.5f;
+            yield return new WaitForSeconds(2.0f);
 
             //Se para
-            speed.x = 0f;
+            /*speed.x = 0f;
             speed.y = 0f;
             yield return new WaitForSeconds(1.0f);
 
-            speed.x =-1f;
-            speed.y = -1f;
+            speed.x = 0f;
+            speed.y = -2f;
             yield return new WaitForSeconds(1.0f);
 
             speed.x = 0f;
             speed.y = 0f;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.0f);*/
 
             //Dispara
             GameObject bala = Instantiate(Bullet, transform.position, Quaternion.identity, null);

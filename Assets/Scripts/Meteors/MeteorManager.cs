@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorManager : MonoBehaviour
+public class Meteormanager : MonoBehaviour
 {
     public GameObject meteorPrefab;
     public float timeLauchMeteor;
