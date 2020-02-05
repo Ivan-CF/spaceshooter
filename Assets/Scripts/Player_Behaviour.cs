@@ -12,6 +12,7 @@ public class Player_Behaviour : MonoBehaviour
     public AudioSource audioSource;
     public ParticleSystem ps;
     public GameObject graphics;
+    public ScoreManager ScoreManager;
 
     [SerializeField] Collider2D collider;
 
@@ -93,13 +94,20 @@ public class Player_Behaviour : MonoBehaviour
             //Desactivo el grafico
             graphics.SetActive(false);
 
+            //Elimino el boxcollideR2D
             collider.enabled = false;
 
-
+            //Lanzo la particula
             ps.Play();
 
             //Lanzo sonido de explosion
             audioSource.Play();
+
+            //Desactivo el propeller
+            prop.gameObject.SetActive(false);
+
+            //Indicamos al score que hemos perdido una vida
+            ScoreManager.LoseLife();
 
             //Me espero 1 segundo
             yield return new WaitForSeconds(1.0f);
